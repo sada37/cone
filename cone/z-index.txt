@@ -1,0 +1,7 @@
+・layout/header
+.l-header: 9999 → 最上位にいてほしいため
+.l-gnav-button: 1 → ハンバーガーメニューを開いたときに背景色に
+隠れてしまいボタンが押せなくなるため
+
+・object/project/top
+.p-top-hero-title-text: 2 → heroのスライドに隠れてしまうため

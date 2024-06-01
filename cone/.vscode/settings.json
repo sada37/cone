@@ -1,0 +1,7 @@
+{
+  "dartsass.sassBinPath": "node_modules/sass/sass.js",
+  "dartsass.disableAutoPrefixer": true,
+  "dartsass.disableCompileOnSave": false,
+  "dartsass.outputFormat": "cssonly",
+  "dartsass.targetDirectory": "css/"
+}

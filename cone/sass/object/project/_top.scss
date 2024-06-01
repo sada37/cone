@@ -1,0 +1,356 @@
+@use "../../global" as g;
+/* --------------------
+object/project/top 
+--------------------*/
+
+/* ---------- hero -----------*/
+
+.p-top-hero .splide__list {
+  overflow: hidden;
+}
+
+.p-top-hero .splide__slide {
+  max-height: 100svh;
+  height: 100%;
+  min-height: 350px;
+}
+
+.p-top-hero-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* top-hero-title-text */
+.p-top-hero-title-text {
+  color: #fff;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  text-shadow: 0 0 4px #333;
+  z-index: 2;
+}
+
+.p-top-hero-main-title {
+  font-size: clamp(1.85rem, 8vw, 5rem);
+  line-height: 1.75;
+  font-weight: 900;
+}
+
+.p-top-hero-main-title--break {
+  display: block;
+  @media screen and (min-width: 1150px) {
+    display: inline;
+  }
+}
+
+.p-top-hero-sub-title {
+  font-size: clamp(24px, 5vw, 64px);
+  font-weight: 700;
+}
+
+.p-top-hero-sub-title--break {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: inline;
+  }
+}
+
+.p-top-hero-sub-title--first {
+  font-family: g.$englishLetter;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+/* p-top-hero aniamtion */
+.p-top-hero {
+  animation: hero 2s;
+}
+
+@keyframes hero {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.p-top-hero-title-text {
+  opacity: 0;
+  animation: heroTitleText 2s 1s forwards;
+}
+
+@keyframes heroTitleText {
+  0% {
+    translate: 0 -100px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+/* ---------- top-about ----------- */
+
+.p-top-about {
+  padding: 48px 0;
+  margin-bottom: 40px;
+  @include g.mq(md) {
+    padding: 64px 0;
+    margin-bottom: 80px;
+  }
+}
+
+.p-top-about-read-description {
+  margin-bottom: 48px;
+  text-align: center;
+  @include g.mq(md) {
+    margin-bottom: 64px;
+  }
+}
+
+.p-top-about-read-text {
+  font-size: 1.125rem;
+  line-height: 3;
+  @include g.mq(md) {
+    font-size: 1.5rem;
+  }
+}
+
+.p-top-about-read-text--break {
+  display: block;
+}
+
+.p-top-about-read-text--strong {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: g.$mainColor;
+  display: block;
+  @include g.mq(md) {
+    font-size: 2.5rem;
+  }
+}
+
+.p-top-about-picture {
+  margin-bottom: 48px;
+  @include g.mq(md) {
+    margin-bottom: 64px;
+  }
+}
+
+.p-top-about-img {
+  margin: 0 auto;
+  height: auto;
+}
+
+.p-top-about-description {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+  @include g.mq(md) {
+    gap: 48px;
+  }
+}
+
+// p-top-news (基本newsのページとパーツが一緒なのでこのクラス以外は_news.scssに記述
+.p-top-news {
+  margin-bottom: 40px;
+}
+
+.p-top-news .c-section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.p-top-news .p-news-list {
+  margin-bottom: 48px;
+}
+
+@include g.mq(md){
+  .p-top-news {
+    margin-bottom: 80px;
+  }
+  .p-top-news .c-section-title {
+    margin-bottom: 80px;
+  }
+
+  .p-top-news .p-news-list {
+    margin-bottom: 64px;
+  }
+}
+
+/* ---------- p-top-recruit -----------*/
+.p-top-recruit {
+  padding: 48px 0;
+  max-width: 1920px;
+  margin: 0 auto 40px;
+  @include g.mq(md) {
+    padding: 64px 0;
+    margin: 0 auto 80px;
+  }
+}
+
+.p-top-recruit-inner {
+  height: 500px;
+  position: relative;
+  @media screen and (min-width: 940px) {
+    height: 700px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.p-top-recruit-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  @media screen and (min-width: 940px) {
+    width: 65%;
+  }
+}
+
+.p-top-recruit-description-wrap {
+  justify-content: center;
+  background-color: rgba(0, 99, 218, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 16px;
+  text-align: center;
+  width: 100%;
+  @media screen and (min-width: 940px) {
+    background-color: rgba(0, 99, 218, 1);
+    position: static;
+    padding: 0 32px;
+    width: 35%;
+  }
+}
+
+.p-top-recruit-description {
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 3;
+  @media screen and (min-width: 940px) {
+    font-size: 1.5rem;
+  }
+}
+
+.p-top-recruit-description--break {
+  display: block;
+}
+
+/* ---------- p-top-product ---------- */
+.p-top-product {
+  padding: 32px 0;
+  margin-bottom: 40px;
+  @include g.mq(md){
+    padding: 64px 0;
+    margin-bottom: 80px;
+  }
+}
+
+.p-top-product .c-section-title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.p-top-product-slideshow {
+  max-width: 1280px;
+  width: 90vw;
+  margin: 0 auto 128px;
+}
+
+.p-top-product-slideshow .splide__slide {
+  max-width: 280px;
+  @include g.mq(md){
+    max-width: 350px;
+  }
+}
+
+.p-top-product-img {
+  height: auto;
+}
+
+.p-top-product-description {
+  margin: 0 auto 32px;
+  max-width: 500px;
+  width: 90vw;
+}
+
+.p-top-product .splide__pagination {
+  bottom: -70px;
+  gap: 12px;
+}
+
+.p-top-product .splide__pagination__page {
+  background-color: transparent;
+  border:1px solid g.$mainColor;
+  border-radius: 0;
+  padding: 4px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// paginationに番号を振るcss
+.p-top-product .splide__pagination {
+  counter-reset: pagination-num;
+}
+
+.p-top-product .splide__pagination__page:before {
+  counter-increment: pagination-num;
+  content: counter( pagination-num );
+}
+
+/* ---------- p-top-company -----------*/
+.p-top-company {
+  position: relative;
+}
+
+.p-top-company-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 16px;
+  @include g.mq(md){
+    padding: 48px 0 64px;
+  }
+}
+
+.p-top-company-text {
+  color: #fff;
+  line-height: 1.5;
+  font-size: clamp(1.35rem, 4vw , 4rem);
+  text-shadow: 0 0 4px #333;
+  @include g.mq(md){
+    text-align: center;
+  }
+}
+
+.p-top-company-text--break {
+  display: block;
+}
+
+.p-top-company-text--break-sp {
+  display: block;
+  @include g.mq(md){
+    display: inline;
+  }
+}
+
+.p-top-company-img {
+  width: 100%;
+  min-height: 300px;
+  max-height: 700px;
+  object-fit: cover;
+  height: auto;
+}

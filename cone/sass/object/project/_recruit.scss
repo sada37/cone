@@ -1,0 +1,237 @@
+@use "../../global" as g;
+
+/* -------------------
+object/project/recruit 
+--------------------*/
+.p-recruit {
+  padding: 32px 0;
+  @include g.mq(md) {
+    padding: 64px 0;
+  }
+}
+
+/* ---------- p-recruit-mainvisual----------- */
+.p-recruit-mainvisual {
+  align-items: end;
+  container-type: inline-size;
+  display: grid;
+  position: relative;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+.p-recruit-mainvisual-img {
+  height: auto;
+  @container (min-width: 768px) {
+    width: 70%;
+    margin-left: auto;
+  }
+}
+
+.p-recruit-mainvisual-title {
+  color: g.$mainColor;
+  font-size: clamp(1.075rem, 5vw, 3rem);
+  line-height: 2.5;
+  position: absolute;
+  left: 2vw;
+  bottom: 3vw;
+  opacity: 0;
+  transition: opacity 2s;
+  text-shadow: 0 0 1px #ffffff;
+  @container (min-width: 768px) {
+    align-self: center;
+  }
+}
+
+.p-recruit-mainvisual-title.-active {
+  opacity: 1;
+}
+.p-recruit-mainvisual-title--break {
+  display: block;
+}
+
+.p-recruit-mainvisual-title-decoration {
+  display: inline-block;
+  background-color: g.$subColor;
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-recruit-mainvisual-title-decoration::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0, 136, 255);
+  translate: -110% 0;
+}
+
+.p-recruit-mainvisual-title.-active .p-recruit-mainvisual-title-decoration::before {
+  animation: mainVisualAnime 1s;
+}
+
+@keyframes mainVisualAnime {
+  0% {
+    translate: -110% 0;
+  }
+  50%{
+    translate: 0 0;
+  }
+  100% {
+    translate: 110% 0;
+  }
+}
+
+/* ---------- p-recruit-description----------- */
+.p-recruit-description {
+  padding: 80px 16px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+  @include g.mq(md) {
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 240px 16px 240px calc(16px + 0.1em);
+  }
+}
+
+.p-recruit-description-text:not(:last-child) {
+  margin-bottom: 48px;
+  @include g.mq(md) {
+    margin-bottom: 96px;
+  }
+}
+
+.p-recruit-description-text--break {
+  display: block;
+}
+
+/* ---------- p-recruit-interview----------- */
+.p-recruit-interview {
+  padding: 32px 0;
+  @include g.mq(md) {
+    padding: 64px 0;
+  }
+}
+
+.p-recruit-interview .c-section-title {
+  text-align: center;
+  margin-bottom: 32px;
+  @include g.mq(md) {
+    margin-bottom: 64px;
+  }
+}
+
+.p-recruit-interview-card-wrap {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-inline: auto;
+  width: 90vw;
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr;
+    max-width: 1080px;
+  }
+}
+
+.p-recruit-interview-card {
+  background-color: g.$subColor;
+  border: 1px solid g.$mainColor;
+  border-radius: 8px;
+  padding: 24px;
+  margin-inline: auto;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    gap: 64px;
+  }
+}
+
+.p-recruit-interviewee-wrap {
+  margin-bottom: 8px;
+  @include g.mq(md) {
+    margin-bottom: 0;
+    flex: 1;
+  }
+}
+
+.p-recruit-interviewee-card-img {
+  height: auto;
+  width: 100%;
+  min-width: 235px;
+  margin-bottom: 8px;
+}
+
+.p-recruit-interviewee-name {
+  font-weight: 700;
+  font-size: 1.125rem;
+  @include g.mq(md) {
+    font-size: 1.25rem;
+  }
+}
+
+.p-recruit-interview-category {
+  color: g.$mainColor;
+  font-size: 1rem;
+  margin: 0;
+  @include g.mq(md) {
+    font-size: 1.125rem;
+  }
+}
+
+.p-recruit-interview-content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ----------p-recruit-job-offer---------- */
+.p-recruit-job-offer {
+  padding: 32px 0;
+  @include g.mq(md) {
+    padding: 64px 0;
+  }
+}
+
+.p-recruit-job-offer-inner {
+  background-color: g.$subColor;
+  border: 1px solid g.$mainColor;
+  border-radius: 8px;
+  padding: 32px;
+  @include g.mq(md) {
+    padding: 64px;
+  }
+}
+
+.p-recruit-job-offer .c-section-title {
+  text-align: center;
+  margin-bottom: 32px;
+  @include g.mq(md) {
+    margin-bottom: 64px;
+  }
+}
+
+.p-recruit-job-offer-list {
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+  @include g.mq(md) {
+    gap: 48px;
+  }
+}
+
+.p-recruit-job-offer-item {
+  border-bottom: 2px dotted g.$mainColor;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  gap: 4px;
+  padding-bottom: 8px;
+  @include g.mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 64px;
+  }
+}
+
+.p-recruit-job-offer-link {
+  color: g.$mainColor;
+}

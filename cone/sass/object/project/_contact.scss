@@ -1,0 +1,99 @@
+@use "../../global" as g;
+
+/* -------------------
+object/project/contact
+--------------------*/
+.p-contact {
+  padding: 32px 0;
+  @include g.mq(md) {
+    padding: 64px 0;
+  }
+}
+
+.p-contact-description {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.p-contact-form-wrap {
+  background-color: g.$subColor;
+  border: 1px solid g.$mainColor;
+  border-radius: 12px;
+  padding: 32px;
+  container-type: inline-size;
+}
+
+.p-contact-form-item {
+  border-bottom: 1px solid g.$mainColor;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.p-contact-form-label {
+  font-weight: 700;
+  min-width: 160px;
+  @container (min-width: 530px) {
+    max-width: 30%;
+    min-width: 210px;
+    width: 100%;
+    font-size: 1.125rem;
+  }
+}
+
+.p-contact-form-policy {
+  padding: 32px 0;
+  display: block;
+  text-align: center;
+}
+
+.p-contact-form-policy--break {
+  display: block;
+  @container (min-width: 370px){
+    display: inline;
+  }
+}
+
+.p-contact-form-required {
+  background-color: g.$mainColor;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  width: 40px;
+  height: 30px;
+}
+
+.p-contact-form-required--blank {
+  width: 40px;
+  height: 30px;
+}
+
+.p-contact-form-input {
+  padding: 8px;
+  max-width: 400px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.p-contact-form-textarea {
+  width: 100%;
+  height: 250px;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+@container (min-width: 970px) {
+  .p-contact-form-textarea {
+    max-width: 600px;
+  }
+  .p-contact-form-item:has(.p-contact-form-textarea) .p-contact-form-label,
+  .p-contact-form-item:has(.p-contact-form-textarea) .p-contact-form-required {
+    align-self: start;
+  }
+}
+
+.c-button[type="submit"] {
+  cursor: pointer;
+}

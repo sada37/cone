@@ -1,0 +1,98 @@
+@use "../../global" as g;
+
+/* --------------------
+object/project/about 
+--------------------*/
+
+.p-about {
+  padding: 32px 0;
+  @include g.mq(md) {
+    margin-bottom: 20px;
+    padding: 64px 0;
+  }
+}
+
+.p-about-title {
+  color: g.$mainColor;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  margin-bottom: 64px;
+  @include g.mq(md) {
+    margin-bottom: 128px;
+  }
+}
+
+.p-about-image {
+  height: auto;
+  margin: 0 auto 64px;
+  max-width: 1000px;
+  width: 90vw;
+  @include g.mq(md) {
+    margin: 0 auto 128px;
+  }
+}
+
+/* about-description common*/
+.p-about-description-box-wrap:not(:nth-child(2)) {
+  background-color: g.$mainColor;
+}
+
+.p-about-description-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 0;
+  @include g.mq(md){
+    gap: 64px;
+  }
+}
+
+.p-about-description-card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 400px;
+  @include g.mq(md){
+    margin: 0;
+  }
+}
+
+.p-about-description-title {
+  font-size: 1.5rem;
+  @include g.mq(md){
+    font-size: 2rem;
+  }
+}
+
+.p-about-description-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* about-description common*/
+
+.p-about-lentel-with-sale,
+.p-about-development {
+  color: #fff;
+  @include g.mq(md){
+    flex-direction: row;
+  }
+}
+
+.p-about-suggest {
+  @include g.mq(md){
+    flex-direction: row-reverse;
+  }
+}
+
+.p-about-suggest .p-about-description-title  {
+  color: g.$mainColor;
+}
+
+
+

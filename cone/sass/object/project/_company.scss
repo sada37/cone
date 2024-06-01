@@ -1,0 +1,99 @@
+@use "../../global" as g;
+
+/* -------------------
+object/project/company
+--------------------*/
+
+/*----------- p-company-greeting----------*/
+
+.p-company-greeting {
+  padding: 32px 0;
+  margin-bottom: 32px;
+  @include g.mq(md){
+    padding: 64px 0;
+    margin-bottom: 64px;
+  }
+}
+
+.p-company-greeting .c-section-title {
+  text-align: center;
+  margin-bottom: 24px;
+  @include g.mq(md){
+    margin-bottom: 48px;
+  }
+}
+
+.p-company-greeting-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include g.mq(xl){
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 64px;
+  }
+}
+
+.p-company-greeting-img {
+  height: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.p-company-greeting-text-wrap {
+  display: grid;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.p-company-greeting-text {
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+.p-company-greeting-text--right {
+  text-align: right;
+}
+
+/*----------p-company-about----------*/
+.p-company-about {
+  padding: 32px 0; 
+  @include g.mq(md){
+    padding: 64px 0;
+  }
+}
+
+.p-company-about .c-section-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.p-company-about-table {
+  border-collapse: collapse;
+}
+
+.p-company-about-table-name {
+  min-width: 200px;
+  display: block;
+  text-align: left;
+  padding: 16px 0 0;
+  @include g.mq(md){
+    border-bottom: 1px solid g.$textColor;
+    display: table-cell;
+    font-size: 1.5rem;
+    padding: 32px;
+    min-width: 300px;
+  }
+}
+
+.p-company-about-table-description {
+  border-bottom: 1px solid g.$textColor;
+  display: block;
+  padding: 0 0 16px;
+  @include g.mq(md){
+    display: table-cell;
+    font-size: 1.5rem;
+    padding: 32px;
+  }
+}

@@ -1,0 +1,28 @@
+@use "../../global" as g;
+/* ---------------------
+object/component/title 
+---------------------*/
+
+.c-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  @include g.mq(md) {
+    font-size: 2rem;
+  }
+}
+
+.c-section-title--primary {
+  color: g.$mainColor;
+}
+
+.c-section-title--secondary {
+  color: #fff;
+}
+
+.c-under-page-title {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.c-under-page-title--primary {
+  color: #fff;
+}

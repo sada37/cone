@@ -1,0 +1,219 @@
+@use "../global" as g;
+/*---------------------
+layout/header
+----------------------*/
+
+/*----------- l-header ----------*/
+.l-header {
+  align-items: center;
+  display: flex;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.l-header.is-active {
+  background-color: #fff;
+  box-shadow: 0 0px 2px #000;
+}
+
+.l-header-logo {
+  max-width: 150px;
+  @include g.mq(md) {
+    max-width: 200px;
+  }
+}
+
+.l-gnav-bg {
+  transition-timing-function: ease-out;
+}
+
+.l-gnav-list {
+  align-items: center;
+  background-color: g.$mainColor;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  justify-content: center;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  position: fixed;
+  // top: 0;
+  // left: 0;
+  inset: 0;
+  /* 強めのease-out */
+  transition-timing-function: cubic-bezier(0, -0.01, 0.01, 0.99);
+  transform: translateX(-100%);
+  width:  70%;
+  @media screen and (min-width: 1024px) {
+    background-color: transparent;
+    flex-direction: row;
+    gap: 16px;
+    height: auto;
+    padding-top: 0;
+    position: static;
+    transform: translateX(0);
+    width: 100%;
+  }
+}
+
+.l-gnav-list-item {
+  text-align: center;
+  width: 70%;
+  @media screen and (min-width: 1024px) {
+    width: auto;
+  }
+}
+
+.l-gnav-list-item:first-child {
+  border-top: 1px solid #ffffff;
+  @media screen and (min-width: 1024px) {
+    border: none;
+  }
+}
+
+.l-gnav-list-item + .l-gnav-list-item {
+  border-top: 1px solid #fff;
+  @media screen and (min-width: 1024px) {
+    border: none;
+  }
+}
+
+/* デスクトップではトップへのナビはいらないのでこのクラスで非表示にする */
+@media screen and (min-width: 1024px) {
+  .l-gnav-list-item--mobile-only {
+    display: none;
+  }
+}
+
+.l-gnav-list-link {
+  position: relative;
+  display: block;
+  font-size: 1.125rem;
+  padding: 12px;
+}
+
+.l-gnav-list-link:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 2px #333 inset;
+}
+
+.l-gnav-list-link--primary {
+  color: #fff;
+  @media screen and (min-width: 1024px) {
+    color: g.$textColor;
+  }
+}
+
+.l-gnav-list-link--contact {
+  background-color: #fff;
+  color: g.$mainColor;
+  overflow: hidden;
+  margin: 16px auto 0;
+  width: 160px;
+  @media screen and (min-width: 1024px) {
+    background-color: g.$mainColor;
+    color: #fff;
+    margin: 0;
+  }
+}
+
+.l-gnav-list-link--primary::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s;
+  background-color: g.$mainColor;
+}
+
+.l-gnav-list-link--contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  translate: 0 100%;
+  transition: translate 0.3s;
+  background-color: #0091ff;
+  mix-blend-mode: lighten;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+@media (any-hover: hover) {
+  .l-gnav-list-link--primary:hover.l-gnav-list-link--primary::before {
+    width: 100%;
+  }
+
+  .l-gnav-list-link--contact:hover.l-gnav-list-link--contact::before {
+    translate: 0 0;
+  }
+}
+
+/* l-gnav-button */
+.l-gnav-button {
+  background-color: #fff;
+  border: 1px solid g.$mainColor;
+  cursor: pointer;
+  padding: 4px;
+  /* 文字数の関係で開いたときにボタンサイズが変わってしまうため固定値指定 */
+  width: 60px;
+  z-index: 1;
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.l-gnav-button-icon {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.l-icon-line {
+  background-color: g.$mainColor;
+  display: inline-block;
+  height: 2px;
+  transition: 0.3s;
+  width: 30px;
+}
+
+.l-icon-line-top--active {
+  transform: translateY(10px) rotate(-45deg);
+}
+
+.l-icon-line-middle--active {
+  opacity: 0;
+}
+
+.l-icon-line-bottom--active {
+  transform: translateY(-10px) rotate(45deg);
+}
+
+.l-gnav-button-text {
+  color: g.$mainColor;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+
+/* gnav open css*/
+.l-gnav--active-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.l-gnav-list--active {
+  transform: translateX(0);
+}
+

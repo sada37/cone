@@ -1,0 +1,22 @@
+@use "../../global" as g;
+
+/* -------------------
+object/project/underPage
+--------------------*/
+.p-under-page-top-inner {
+  background-color: g.$mainColor;
+  display: flex;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  @include g.mq(md){
+    height: 250px;
+  }
+}
+
+.p-under-page-top-img {
+  width: 60px;
+  @include g.mq(md){
+    width: 120px;
+  }
+}

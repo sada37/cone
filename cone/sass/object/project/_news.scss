@@ -1,0 +1,105 @@
+@use "../../global" as g;
+
+/* -------------------
+object/project/news 
+--------------------*/
+// p-top-newsはトップのみのクラスなので_top.scssに記述
+
+.p-news {
+  padding: 32px 0;
+  @include g.mq(md) {
+    padding: 64px 0;
+  }
+}
+
+.p-news-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.p-news-list-item:first-child {
+  border-top: 1px solid g.$mainColor;
+  border-bottom: 1px solid g.$mainColor;
+}
+
+.p-news-list-item + .p-news-list-item {
+  border-bottom: 1px solid g.$mainColor;
+}
+
+.p-news-list-link {
+  color: g.$textColor;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  @include g.mq(md) {
+    align-items: start;
+    flex-direction: row;
+    gap: 48px;
+  }
+}
+
+@media (any-hover: hover) {
+  .p-news-list-item:hover .p-news-list-link {
+    background-color: g.$subColor;
+    color: g.$mainColor;
+  }
+}
+
+.p-news-title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.p-news-time-with-category {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.p-news-category {
+  background-color: g.$mainColor;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+}
+
+.p-news-other-page-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.p-news-other-page-link {
+  place-items: center;
+  aspect-ratio: 1;
+  background-color: g.$mainColor;
+  color: #fff;
+  display: grid;
+  border-radius: 50%;
+  width: 50px;
+}
+
+@media (any-hover: hover) {
+  .p-news-other-page-link:hover {
+  opacity: 0.7;
+  }
+}
+
+.p-news-other-page-link--current-page {
+  color: g.$mainColor;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.p-news-list-text {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  @include g.mq(md) {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,46 @@
+@use "../../global" as g;
+
+/* -------------------
+object/project/product 
+--------------------*/
+.p-product {
+  padding: 32px 0;
+  margin-bottom: 40px;
+  @include g.mq(md){
+    padding: 64px 0;
+    margin-bottom: 80px;
+  }
+}
+
+.p-product .c-section-title {
+  text-align: center;
+  margin-bottom: 32px;
+  @include g.mq(md){
+    margin-bottom: 64px;
+  }
+}
+
+.p-product-list {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  @include g.mq(md){
+    gap: 64px;
+  }
+}
+
+.p-product-img {
+  height: auto;
+  max-width: 320px;
+  margin: 0 auto 16px;
+  width: 100%;
+}
+
+.p-product-name {
+  color: g.$mainColor;
+  text-align: center;
+  font-size: 1.125rem;
+  @include g.mq(md){
+    font-size: 1.25rem;
+  }
+}

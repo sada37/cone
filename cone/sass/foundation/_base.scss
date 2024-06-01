@@ -1,0 +1,47 @@
+@use "../global" as g;
+
+/*---------------------
+foundation/base
+----------------------*/
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  background-color: transparent;
+}
+
+address {
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+  font-family: g.$baseFont;
+  color: g.$textColor;
+  padding-top: 92.5px;
+  @include g.mq(md) {
+    font-size: 1rem;
+    padding-top: 87.5px;
+  }
+}
+
+[data-page="current-page"] {
+  text-decoration: underline;
+  pointer-events: none;
+}

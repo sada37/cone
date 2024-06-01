@@ -1,0 +1,16 @@
+@use "../../global" as g;
+/* --------------------
+object/project/breadcrumb 
+--------------------*/
+.breadcrumb-list {
+  align-items: center;
+  display: flex;
+  background-color: #ccc;
+  padding: 4px 5vw;
+  font-size: 0.75rem;
+}
+
+.breadcrumb-item:not(:last-child)::after{
+  content: ">";
+  padding-right: 4px;
+}

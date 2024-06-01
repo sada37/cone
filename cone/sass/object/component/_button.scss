@@ -1,0 +1,78 @@
+@use "../../global" as g;
+/* ----------------------
+  object/component/button 
+ -------------------- */
+
+.c-button {
+  border-radius: 100vh;
+  display: block;
+  padding: 12px 0;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  width: 180px;
+  @include g.mq(md) {
+    padding: 16px 0;
+    width: 220px;
+  }
+}
+
+.c-button::after {
+  content: "";
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  translate: 0 -50%;
+  scale: 0.8;
+  transition: translate 0.3s;
+  @include g.mq(md) {
+    height: 24px;
+    scale: 1;
+  }
+}
+
+.c-button--primary {
+  background-color: g.$mainColor;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.c-button--primary::after {
+  content: url(../img/button-icon-white.svg);
+}
+
+.c-button--secondary {
+  background-color: #fff;
+  color: g.$mainColor;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.c-button--secondary::after {
+  content: url(../img/button-icon.svg);
+}
+
+@media (any-hover: hover) {
+  .c-button:hover.c-button::after {
+    translate: 10px -50%;
+  }
+}
+.c-button--primary:hover {
+  color: g.$mainColor;
+  background-color: #ffffff;
+  outline: 1px solid currentColor;
+}
+
+.c-button--primary:hover.c-button--primary::after {
+  content: url(../img/button-icon.svg);
+}
+
+.c-button--secondary:hover {
+  color: #fff;
+  background-color: g.$mainColor;
+  outline: 1px solid currentColor;
+}
+
+.c-button--secondary:hover.c-button--secondary::after {
+  content: url(../img/button-icon-white.svg);
+}
